@@ -16,7 +16,7 @@ export default new Router({
       component: HelloWorld
     },
     {
-        path:"/main",
+        path:"/main/:index",
         name:"主页",
         component: main
     },

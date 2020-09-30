@@ -33,13 +33,19 @@
             </el-menu-item>
           </el-menu>
         </header>
-        <!--header end-->
-        <!--pageController begin-->
-        <Page-Controller :page="page"></Page-Controller>
-        <!--pageController end-->
-        <!--page begin-->
-        <router-view></router-view>
-        <!--page end-->
+    <!--header end-->
+    <!--pageController begin-->
+    <button><router-link :to="{name:'主页',params:{index:message}}">[text1]</router-link></button>
+    <button><router-link to="/main/2312">[text2]</router-link></button>
+    <Page-Controller :page="page"></Page-Controller>
+    <!--pageController end-->
+    <!--page begin-->
+		<transition>
+			<keep-alive>
+				<router-view></router-view>
+			</keep-alive>
+		</transition>
+    <!--page end-->
   </div>
 </template>
 

@@ -6,8 +6,14 @@ import Vue from 'vue'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 
-import App from './App'
-import router from './router'
+import App from './App';
+
+/**router路由配置*/
+import router from './router';
+router.afterEach((to, from, next) => {
+  document.title = to.name;
+})
+
 Vue.use(ElementUI);
 
 Vue.config.productionTip = false
